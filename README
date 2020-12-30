@@ -1,0 +1,28 @@
+Lua 5.4.2
+
+This is a copy of the Lua source from https://www.lua.org with a CMake
+build script added, which is tested working on 64-bit Windows 10.  It
+produces the `lua` and `luac` executables, plus the static and shared
+libs.
+
+-- Building --
+
+$ git clone https://github.com/phoenix-engine/lua lua-5.4.2
+$ cd lua-5.4.2
+
+$ mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release
+
+$ cmake --build .
+
+Obtain the target exe and/or libs from target/Release.  On Windows, the
+symbol exports (lua_5_4_2.exp) are required (?) to use the DLL.
+
+To use C libraries from Lua, or to use Lua as a C library, see
+doc/manual.html#4 ("The Application Programming Interface").
+
+-- Original README --
+
+This is Lua 5.4.2, released on 13 Nov 2020.
+
+For installation instructions, license details, and
+further information about Lua, see doc/readme.html.
